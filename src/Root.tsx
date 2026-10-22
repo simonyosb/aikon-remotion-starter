@@ -1,33 +1,33 @@
 import { Composition } from "remotion";
+import { LattePromo } from "./LattePromo";
 import {
-  ButterflyPeaLimeAd,
-  IcedCocoaAd,
-  MatchaLatteAd,
-  StrawberryMilkAd,
-  ThaiTeaAd,
-} from "./DrinkAd";
-import { LatteAd } from "./LatteAd";
+  ButterflyPeaLime,
+  IcedCocoa,
+  MatchaLatte,
+  StrawberryMilk,
+  ThaiTea,
+} from "./DrinkPromo";
 
-const DRINK_ADS = [
-  { id: "ThaiTea", component: ThaiTeaAd },
-  { id: "MatchaLatte", component: MatchaLatteAd },
-  { id: "ButterflyPeaLime", component: ButterflyPeaLimeAd },
-  { id: "StrawberryMilk", component: StrawberryMilkAd },
-  { id: "IcedCocoa", component: IcedCocoaAd },
+const DRINKS = [
+  { id: "ThaiTea", component: ThaiTea },
+  { id: "MatchaLatte", component: MatchaLatte },
+  { id: "ButterflyPeaLime", component: ButterflyPeaLime },
+  { id: "StrawberryMilk", component: StrawberryMilk },
+  { id: "IcedCocoa", component: IcedCocoa },
 ];
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
-        id="LatteYen"
-        component={LatteAd}
+        id="LattePromo"
+        component={LattePromo}
         durationInFrames={450}
         fps={30}
         width={1080}
         height={1920}
       />
-      {DRINK_ADS.map(({ id, component }) => (
+      {DRINKS.map(({ id, component }) => (
         <Composition
           key={id}
           id={id}

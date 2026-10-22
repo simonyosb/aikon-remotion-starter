@@ -26,13 +26,17 @@
    npm run dev
    ```
 
-3. เปิด Terminal อีกแท็บในโฟลเดอร์เดียวกัน พิมพ์ `claude` แล้วส่งคำสั่งนี้
+3. เปิด Terminal อีกแท็บในโฟลเดอร์เดียวกัน แล้วพิมพ์ `claude`
+
+   ครั้งแรก Claude จะถามว่าไว้ใจโฟลเดอร์นี้ไหม ตัวเลือกที่เลือกไว้คือ **No, exit** ให้กดลูกศรลงไปที่ **Yes, I trust this folder** ก่อนกด Enter ไม่งั้น Claude จะปิดตัวเอง
+
+   จากนั้นส่งคำสั่งนี้
 
    ```text
    ทำคลิปแนวตั้ง 9:16 ยาว 15 วินาที โปรโมทลาเต้เย็น 45 บาท ร้านมุมกาแฟ โทนครีม ฟอนต์ไทย Kanit ข้อความเด้งเข้าทีละบรรทัด
    ```
 
-   ตอนซ้อม Claude ใช้เวลาราว 15 นาที ระหว่างนี้ปล่อยให้มันทำไปได้เลย
+   ตอนอัดคลิป Claude ใช้เวลาราว 2 นาที (บางครั้งนานกว่านี้) ระหว่างนี้ปล่อยให้มันทำไปได้เลย
 
 4. สั่งแก้ทีละอย่าง แต่ละครั้งใช้เวลาไม่ถึง 20 วินาที
 
@@ -59,12 +63,12 @@
 6. เรนเดอร์เป็นไฟล์ MP4
 
    ```bash
-   npx remotion render LatteYen out/latte.mp4
+   npx remotion render LattePromo out/latte.mp4
    ```
 
    ได้ไฟล์ `out/latte.mp4` พร้อมโพสต์
 
-ผลของ AI แต่ละครั้งไม่เหมือนกันเป๊ะ ชื่อคอมโพสิชันอาจไม่ใช่ `LatteYen` ดูชื่อจริงได้ในหน้าพรีวิว
+ผลของ AI แต่ละครั้งไม่เหมือนกันเป๊ะ ชื่อคอมโพสิชันอาจไม่ใช่ `LattePromo` ดูชื่อจริงได้ในหน้าพรีวิว
 
 ## ทางที่ 2: เอาไฟล์ในนี้ไปแก้ต่อ
 
@@ -84,7 +88,7 @@ npm run dev
 
 ## แถม: อีก 5 เมนู
 
-ในคลิปมีกำแพงผลงาน 6 เมนู อีก 5 เมนูอยู่ใน `src/DrinkAd.tsx` Claude ทำจากคำสั่งเดียวนี้ ใช้เวลาไม่ถึง 2 นาที
+ในคลิปมีกำแพงผลงาน 6 เมนู อีก 5 เมนูอยู่ใน `src/DrinkPromo.tsx` Claude ทำจากคำสั่งเดียวนี้ ใช้เวลาไม่ถึง 2 นาที
 
 ```text
 ทำคลิปแบบเดียวกับลาเต้เย็นเพิ่มอีก 5 เมนู
@@ -98,14 +102,14 @@ npm run dev
 npx remotion render ThaiTea out/thai-tea.mp4
 ```
 
-ชื่อทั้งหมด: `LatteYen`, `ThaiTea`, `MatchaLatte`, `ButterflyPeaLime`, `StrawberryMilk`, `IcedCocoa`
+ชื่อทั้งหมด: `LattePromo`, `ThaiTea`, `MatchaLatte`, `ButterflyPeaLime`, `StrawberryMilk`, `IcedCocoa`
 
 ## ถ้าเรนเดอร์ไม่ผ่าน
 
 บน Mac บางเครื่อง เบราว์เซอร์ที่ Remotion โหลดมาใช้เรนเดอร์จะพังแล้วขึ้นข้อความ `Target closed` ถ้ามี Google Chrome อยู่ในเครื่อง ให้เรนเดอร์ด้วย Chrome ตัวนั้นแทน
 
 ```bash
-npx remotion render LatteYen out/latte.mp4 --browser-executable "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+npx remotion render LattePromo out/latte.mp4 --browser-executable "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 ```
 
 ถ้ายังไม่ผ่าน ก๊อปข้อความ error ทั้งหมดส่งให้ Claude แล้วบอกว่า "เรนเดอร์ไม่ผ่าน ช่วยแก้หน่อย"
